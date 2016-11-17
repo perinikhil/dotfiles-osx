@@ -13,7 +13,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'benekastah/neomake'
   Plug 'mattn/emmet-vim'
   Plug 'ntpeters/vim-better-whitespace'
-  Plug 'terryma/vim-smooth-scroll'
   Plug 'terryma/vim-multiple-cursors'
   Plug 'Raimondi/delimitMate'
   Plug 'tpope/vim-commentary'
@@ -104,10 +103,6 @@ call plug#end()
 
 "better-whitespace
   autocmd! BufWritePre * StripWhitespace
-
-"vim-smooth-scroll
-    noremap <silent> <C-k> :call smooth_scroll#up(20, 0, 20)<CR>
-    noremap <silent> <C-j> :call smooth_scroll#down(20, 0, 20)<CR>
 
 "multiple-cursor
   let g:multi_cursor_use_default_mapping=0
@@ -212,15 +207,19 @@ call plug#end()
   nnoremap <Leader>ft :set ts=4<Enter> :%retab!<Enter> :set ts=2<Enter> :%retab!<Enter>
 
 "enter key remaps
-    nnoremap <Enter> G
-    xnoremap <Enter> G
-    autocmd! BufReadPost quickfix nnoremap <buffer> <Enter> <Enter>
+  nnoremap <Enter> G
+  xnoremap <Enter> G
+  autocmd! BufReadPost quickfix nnoremap <buffer> <Enter> <Enter>
 
 "search settings
   set hlsearch
   set ignorecase
   set smartcase
   set incsearch
+
+"remap navigation
+  map <C-k> 10k
+  map <C-j> 10j
 
 "buffer
   set hidden
