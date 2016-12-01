@@ -2,6 +2,7 @@
 call plug#begin('~/.vim/plugged')
 
   Plug 'joshdick/onedark.vim'
+  Plug 'altercation/vim-colors-solarized'
   Plug 'scrooloose/nerdtree'
   Plug 'ctrlpvim/ctrlp.vim'
   Plug 'vim-airline/vim-airline'
@@ -156,6 +157,7 @@ call plug#end()
   " set t_Co=256
   set background=dark
   let g:onedark_termcolors=16
+  " let g:solarized_termcolors=256
   colorscheme onedark
 
 "settings
@@ -170,26 +172,26 @@ call plug#end()
   " set relativenumber
   set nocursorline
   set noshowcmd
+  set noshowmode
   set nolazyredraw
   set ttyfast
+  set mouse=a
   set scrolloff=20
-
-  "set mouse=
+  " set showmatch
   filetype plugin indent on
-
-    set showmatch
-  filetype plugin indent on
-
   inoremap kj <Esc>
   nnoremap <Leader>w :w<Enter>
 
 "omni completion
-    filetype plugin on
-    set omnifunc=syntaxcomplete#Complete
+  filetype plugin on
+  set omnifunc=syntaxcomplete#Complete
 
 "stay vmode on indent
   vnoremap < <gv
   vnoremap > >gv
+
+"vmode clipboard copy
+  vnoremap y ygv:w !pbcopy<Enter><Enter>
 
 "disable swap files
   set nobackup
@@ -207,7 +209,6 @@ call plug#end()
   nnoremap <Leader>ft :set ts=4<Enter> :%retab!<Enter> :set ts=2<Enter> :%retab!<Enter>
 
 "enter key remaps
-  nnoremap <Enter> G
   xnoremap <Enter> G
   autocmd! BufReadPost quickfix nnoremap <buffer> <Enter> <Enter>
 
@@ -226,6 +227,6 @@ call plug#end()
   nnoremap <Leader>l :bnext<Enter>
   nnoremap <Leader>h :bprevious<Enter>
   nnoremap <Leader>q :bd <Bar> bprevious<Enter>
-  au FocusLost,BufLeave * :silent! wa
+  " au FocusLost,BufLeave * :silent! wa
   au FocusGained,BufEnter * :silent! !
   "au FocusLost,BufLeave * :silent! w
