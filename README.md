@@ -5,6 +5,12 @@ Symbolic links
     $ ln -s ~/dotfiles/.vim ~/.vim
     $ mv ~/.vimrc ~/old_.vimrc
     $ ln -s ~/dotfiles/.vimrc ~/.vimrc
+    
+    # setup zsh
+    - install zsh through oh-my-zsh
+    $ rm ~/.zshrc
+    $ ln -s ~/dotfiles/.zshrc ~/.zshrc
+    - install poweline fonts or FiraCode
 
     # setup neovim
     $ mv ~/.config/nvim ~/.config/old_nvim
