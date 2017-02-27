@@ -12,6 +12,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'easymotion/vim-easymotion'
   Plug 'tpope/vim-surround'
   Plug 'benekastah/neomake'
+  Plug 'Valloric/YouCompleteMe'
   Plug 'mattn/emmet-vim'
   Plug 'ntpeters/vim-better-whitespace'
   Plug 'terryma/vim-multiple-cursors'

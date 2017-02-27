@@ -80,11 +80,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vi'
+else
+  export EDITOR='vim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -99,9 +99,14 @@ source $ZSH/oh-my-zsh.sh
 
 # alias vi="/Applications/MacVim.app/Contents/MacOS/Vim"
 
-alias vi="mvim -v"
 alias vim="mvim -v"
 alias zshrc="cd ~/dotfiles && vi .zshrc && source .zshrc"
 alias vimrc="cd ~/dotfiles && vi .vimrc"
 
 export DISABLE_AUTO_TITLE="true"
+
+export NVM_DIR="/Users/perinikhil/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
